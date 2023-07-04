@@ -1,35 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const counter = ref(0);
-const decrease = () => {
-      counter.value--;
-    };
-/* 
-old version requieres imports
-export default defineComponent({
-  name: 'App',
-  setup() {
-    
-    //methods
-    const decrease = () => {
-      counter.value--;
-    };
-
-    return {
-      counter,
-      decrease,
-    };
-  },
-}); */
-
+import { RouterView } from 'vue-router'
+import NavBar from '@/shared/components/NavBar.vue';
+import { routerLink } from '@/router/link-routes';
 </script>
 
 <template>
   <div class="wrapper">
-    <h1>Counter {{ counter }} </h1>
-    <button @click="counter++">Increment</button>
-    <button @click="decrease">Decrement</button>
+    <header>
+      <NavBar title="Navegador"
+       :links="routerLink"
+      />
+    </header>
+    <main>
+
+      <RouterView />
+    </main>
   </div>
 </template>
 
