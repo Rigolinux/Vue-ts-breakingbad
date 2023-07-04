@@ -26,7 +26,10 @@ const routeLinks: RouterLink[] = characterRouter.children!
      :show-icon="false"
       :links="routeLinks"
      ></NavBar>
-    <router-view />
+ 
+
+       <router-view />
+   
 
   </div>
 </template>
